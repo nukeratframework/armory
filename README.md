@@ -7,13 +7,13 @@ NukeRat armory tools source code (.NET and BOFs).
 NukeRat does not ship with these tools preinstalled. Install what you need from this repository:
 
 ```
-nukerat install <tool>
+armory install <tool>
 ```
 
 To install the full set at once:
 
 ```
-nukerat install all
+armory install all
 ```
 
 ## Index
