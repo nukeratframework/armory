@@ -1,0 +1,21 @@
+
+{
+    "name": "SharpWMI",
+    "version": "0.0.1",
+    "command": "sharp-wmi",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpWMI",
+    "metadata": {
+        "author": [
+            {
+                "name": "GhostPack",
+                "original_repository": "https://github.com/GhostPack/SharpWMI"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "3.5"
+    }
+}

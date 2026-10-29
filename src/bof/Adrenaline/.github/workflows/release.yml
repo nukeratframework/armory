@@ -1,0 +1,143 @@
+name: Publish Adrenaline BOF Bundle
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.o"
+      - "**/README.md"
+      - ".github/workflows/release.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: adrenaline-bof-bundle-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine release metadata
+        id: release
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          SHORT_SHA="$(git rev-parse --short=7 "${GITHUB_SHA}")"
+          COMMIT_EPOCH="$(git show -s --format=%ct "${GITHUB_SHA}")"
+          RELEASE_STAMP="$(date -u --date="@${COMMIT_EPOCH}" +'%Y-%m-%d-%H%M%S')"
+          RELEASE_TAG="adrenaline-bof-bundle-${RELEASE_STAMP}-${SHORT_SHA}"
+
+          echo "tag=${RELEASE_TAG}" >> "${GITHUB_OUTPUT}"
+          echo "name=Adrenaline BOF Bundle ${RELEASE_STAMP} (${SHORT_SHA})" >> "${GITHUB_OUTPUT}"
+
+      - name: Prepare complete BOF bundle
+        id: bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BUNDLE_ROOT="dist/adrenaline-bofs"
+          ARCHIVE_BASE="adrenaline-bofs"
+
+          mkdir -p "${BUNDLE_ROOT}"
+          git ls-files -z -- '*.o' > tracked_objects.bin
+
+          if [[ ! -s tracked_objects.bin ]]; then
+            echo "No tracked BOF object files were found." >&2
+            exit 1
+          fi
+
+          OBJECT_COUNT=0
+
+          while IFS= read -r -d '' object_file; do
+            if [[ ! -f "${object_file}" ]]; then
+              echo "Tracked object file is missing: ${object_file}" >&2
+              exit 1
+            fi
+
+            install -D -m 0644 "${object_file}" "${BUNDLE_ROOT}/${object_file}"
+            ((OBJECT_COUNT += 1))
+
+            module_readme="$(dirname "${object_file}")/README.md"
+            if [[ -f "${module_readme}" ]]; then
+              install -D -m 0644 "${module_readme}" "${BUNDLE_ROOT}/${module_readme}"
+            fi
+          done < tracked_objects.bin
+
+          install -m 0644 README.md "${BUNDLE_ROOT}/README.md"
+
+          (
+            cd "${BUNDLE_ROOT}"
+            find . -type f -name '*.o' -print0 \
+              | sort -z \
+              | xargs -0 sha256sum \
+              > SHA256SUMS
+          )
+
+          MODULE_COUNT="$(find "${BUNDLE_ROOT}" -type f -name '*.o' -printf '%h\n' | sort -u | wc -l | tr -d ' ')"
+
+          {
+            echo "# Adrenaline BOF Bundle"
+            echo
+            echo "Complete tracked BOF bundle from commit \`${GITHUB_SHA}\`."
+            echo
+            echo "- BOF object files: ${OBJECT_COUNT}"
+            echo "- Module directories: ${MODULE_COUNT}"
+            echo "- Paths are preserved by category and module."
+            echo "- Verify downloads with \`SHA256SUMS\` inside the archive."
+          } > "${BUNDLE_ROOT}/BUNDLE_INFO.md"
+
+          (
+            cd dist
+            tar -czf "${ARCHIVE_BASE}.tar.gz" "adrenaline-bofs"
+            zip -q -r "${ARCHIVE_BASE}.zip" "adrenaline-bofs"
+          )
+
+          (
+            cd dist
+            sha256sum "${ARCHIVE_BASE}.tar.gz" "${ARCHIVE_BASE}.zip" > SHA256SUMS
+          )
+
+          {
+            echo "# Adrenaline BOF Bundle"
+            echo
+            echo "This release contains every tracked BOF object file in the repository at the tagged commit."
+            echo
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Tag: \`${{ steps.release.outputs.tag }}\`"
+            echo "- BOF object files: ${OBJECT_COUNT}"
+            echo "- Module directories: ${MODULE_COUNT}"
+            echo
+            echo "Download either archive format. Both preserve the repository's category/module layout and include module READMEs plus per-object SHA256 checksums."
+          } > release-notes.md
+
+          echo "object_count=${OBJECT_COUNT}" >> "${GITHUB_OUTPUT}"
+          echo "module_count=${MODULE_COUNT}" >> "${GITHUB_OUTPUT}"
+
+      - name: Create bundle release
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2.6.2
+        with:
+          tag_name: ${{ steps.release.outputs.tag }}
+          name: ${{ steps.release.outputs.name }}
+          target_commitish: ${{ github.sha }}
+          body_path: release-notes.md
+          draft: false
+          prerelease: false
+          make_latest: true
+          overwrite_files: true
+          fail_on_unmatched_files: true
+          files: |
+            dist/adrenaline-bofs.tar.gz
+            dist/adrenaline-bofs.zip
+            dist/SHA256SUMS
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

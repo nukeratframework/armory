@@ -1,0 +1,51 @@
+{
+    "SharpChrome": {
+        "name": "SharpChrome",
+        "version": "0.0.1",
+        "command": "sharpchrome",
+        "type": ".net",
+        "repository": "https://github.com/nukeratarmory/SharpDPAPI",
+        "metadata": {
+            "author": [
+                {
+                    "name": "sliverarmory",
+                    "original_repository": "https://github.com/sliverarmory/SharpDPAPI"
+                },
+                {
+                    "name": "GhostPack",
+                    "original_repository": "https://github.com/GhostPack/SharpDPAPI"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": "any",
+            "net_version": "3.5"
+        }
+    },
+    "SharpDPAPI": {
+        "name": "SharpDPAPI",
+        "version": "0.0.1",
+        "uuid": "d2e3f4a5-1111-4b2c-9d3e-4f5a6b7c8d9e",
+        "command": "sharp-dpapi",
+        "type": ".net",
+        "repository": "https://github.com/nukeratarmory/SharpDPAPI",
+        "metadata": {
+            "author": [
+                {
+                    "name": "sliverarmory",
+                    "original_repository": "https://github.com/sliverarmory/SharpDPAPI"
+                },
+                {
+                    "name": "GhostPack",
+                    "original_repository": "https://github.com/GhostPack/SharpDPAPI"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": "any",
+            "net_version": "3.5"
+        }
+    }
+}

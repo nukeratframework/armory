@@ -1,0 +1,21 @@
+{
+    "name": "SharpHound",
+    "version": "0.0.1",
+    "uuid": "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c",
+    "command": "sharphound",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpHound",
+    "metadata": {
+        "author": [
+            {
+                "name": "SpecterOps",
+                "original_repository": "https://github.com/SpecterOps/SharpHound"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.7"
+    }
+}

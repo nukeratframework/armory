@@ -1,0 +1,20 @@
+{
+    "name": "Sharp-SMBExec",
+    "version": "0.0.1",
+    "command": "sharp-smbexec",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/Sharp-SMBExec",
+    "metadata": {
+        "author": [
+            {
+                "name": "checkymander",
+                "original_repository": "https://github.com/checkymander/Sharp-SMBExec"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "3.5"
+    }
+}

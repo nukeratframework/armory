@@ -1,0 +1,20 @@
+{
+    "name": "SharPersist",
+    "version": "0.0.1",
+    "command": "sharpersist",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharPersist",
+    "metadata": {
+        "author": [
+            {
+                "name": "mandiant",
+                "original_repository": "https://github.com/mandiant/SharPersist"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.0"
+    }
+}

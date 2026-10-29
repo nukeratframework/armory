@@ -1,0 +1,119 @@
+# Moriarty
+Moriarty is a comprehensive .NET tool that extends the functionality of [Watson](https://github.com/rasta-mouse/Watson) and [Sherlock](https://github.com/rasta-mouse/sherlock), originally developed by [@_RastaMouse](https://twitter.com/_RastaMouse). It is designed to enumerate missing KBs, detect various vulnerabilities, and suggest potential exploits for Privilege Escalation in Windows environments. Moriarty combines the capabilities of Watson and Sherlock, adding enhanced scanning for newer vulnerabilities and integrating additional checks.
+
+## Supported Versions
+- Windows 10 (Versions: 1507, 1511, 1607, 1703, 1709, 1803, 1809, 1903, 1909, 2004, 20H2, 21H1, 21H2, 22H1, 22H2)
+- Windows 11 (Versions: 21H2, 22H1, 22H2, 23H1)
+- Server 2016, 2019, 2022
+
+## Installation and Build Instructions
+First, clone the Moriarty repository to your local machine using Git:
+
+```bash
+git clone https://github.com/BC-SECURITY/Moriarty.git
+```
+
+### Building the Project
+
+After cloning the repository, you can build the Moriarty executable using Visual Studio.
+
+### Using Visual Studio
+
+1. Open `Moriarty.sln` in Visual Studio.
+2. Right-click on the solution in Solution Explorer and select "Restore NuGet Packages" to ensure all dependencies are up to date.
+3. Set the build configuration to "Release".
+4. Build the solution by selecting "Build > Build Solution" from the menu.
+
+## Usage
+
+### Help Menu
+```
+C:\> Moriarty.exe --help
+
+███    ███  ██████  ██████  ██  █████  ██████  ████████ ██    ██
+████  ████ ██    ██ ██   ██ ██ ██   ██ ██   ██    ██     ██  ██
+██ ████ ██ ██    ██ ██████  ██ ███████ ██████     ██      ████
+██  ██  ██ ██    ██ ██   ██ ██ ██   ██ ██   ██    ██       ██
+██      ██  ██████  ██   ██ ██ ██   ██ ██   ██    ██       ██
+                                                 v1.2
+                                                 BC Security
+
+Usage: Moriarty.exe [options]
+Options:
+  -h, --help       Display this help message.
+  -d, --debug      Run in debug mode for additional output.
+  -l, --list-vulns List all vulnerabilities that are scanned for.
+
+Examples:
+  Moriarty.exe -d
+  Moriarty.exe --list-vulns
+
+```
+
+### Scan
+```
+C:\> Moriarty.exe
+███    ███  ██████  ██████  ██  █████  ██████  ████████ ██    ██
+████  ████ ██    ██ ██   ██ ██ ██   ██ ██   ██    ██     ██  ██
+██ ████ ██ ██    ██ ██████  ██ ███████ ██████     ██      ████
+██  ██  ██ ██    ██ ██   ██ ██ ██   ██ ██   ██    ██       ██
+██      ██  ██████  ██   ██ ██ ██   ██ ██   ██    ██       ██
+
+                                                 v1.2
+                                                 BC Security
+
+ [*] OS Version: 22H2 (22621)
+ [*] Enumerating installed KBs...
+ [+] CVE-2023-36664 : VULNERABLE
+  [>] https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection
+
+ [+] PrintNightmare (CVE-2021-1675, CVE-2021-34527) : VULNERABLE
+  [>] https://github.com/xbufu/PrintNightmareCheck/tree/main
+
+ [*] Vulnerabilities found: 2/37
+ [+] Scan Complete!
+ 
+```
+
+## CVEs and Vulnerabilities
+Moriarty scans for a variety of CVEs and vulnerabilities. Below is a table detailing each, along with a more detailed description and links to the CVE database.
+
+| CVE/Vulnerability ID | Description | 
+| --------------------- | ----------- |
+| [MS10-015](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-015) | Vulnerability in Windows Kernel related to privilege elevation, allowing attackers to execute arbitrary code. |
+| [MS10-092](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-092) | Vulnerability in Windows Task Scheduler allowing for arbitrary code execution with escalated privileges. |
+| [MS13-053](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2013/ms13-053) | Multiple vulnerabilities in Windows Kernel-Mode Drivers that could allow elevation of privilege. |
+| [MS13-081](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2013/ms13-081) | Multiple vulnerabilities in Windows Kernel-Mode Drivers that could allow remote code execution. |
+| [MS14-058](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2014/ms14-058) | Vulnerabilities in Kernel-Mode Driver that could allow remote code execution through specially crafted TrueType font files. |
+| [MS15-051](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-051) | Vulnerability in Windows Kernel-Mode Drivers allowing for elevation of privilege by bypassing the security features of Windows. |
+| [MS15-078](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-078) | Vulnerability in Windows Font Driver allowing remote code execution through maliciously crafted OpenType fonts. |
+| [MS16-016](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-016) | Vulnerability in WebDAV that could allow elevation of privilege through improper handling of memory. |
+| [MS16-032](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-032) | Vulnerability in Secondary Logon process that could allow elevation of privilege by running a specially crafted application. |
+| [MS16-034](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-034) | Vulnerabilities in Windows Kernel-Mode Driver that could allow elevation of privilege due to the way kernel-mode drivers handle objects in memory. |
+| [MS16-135](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-135) | Vulnerability in Windows Kernel-Mode Drivers that could allow elevation of privilege due to improper handling of certain types of objects in memory. |
+| [CVE-2017-7199](https://www.cve.org/CVERecord?id=CVE-2017-7199) | A privilege escalation vulnerability in Windows due to the way certain applications handle process tokens. |
+| [CVE-2019-0836](https://www.cve.org/CVERecord?id=CVE-2019-0836) | | An elevation of privilege vulnerability in Windows due to the way the Win32k component handles objects in memory. |
+| [CVE-2019-0836](https://www.cve.org/CVERecord?id=CVE-2019-0836) | Elevation of privilege vulnerability in Windows AppX Deployment Server, allowing attackers to overwrite system files. |
+| [CVE-2019-1064](https://www.cve.org/CVERecord?id=CVE-2019-1064) | An elevation of privilege vulnerability in Windows due to improper handling of symbolic links. |
+| [CVE-2019-1130](https://www.cve.org/CVERecord?id=CVE-2019-1130) | An elevation of privilege vulnerability in Windows due to the way the Windows CSRSS handles certain requests. |
+| [CVE-2019-1253](https://www.cve.org/CVERecord?id=CVE-2019-1253) |Elevation of privilege vulnerability in Windows AppX Deployment Server due to improper permissions settings. |
+| [CVE-2019-1315](https://www.cve.org/CVERecord?id=CVE-2019-1315) | An elevation of privilege vulnerability in Windows Error Reporting (WER) due to improper handling of hard links. |
+| [CVE-2019-1385](https://www.cve.org/CVERecord?id=CVE-2019-1385) | Elevation of privilege vulnerability due to improper handling of objects in memory in Windows. |
+| [CVE-2019-1388](https://www.cve.org/CVERecord?id=CVE-2019-1388) | A vulnerability in Windows UAC that allows bypassing of the UAC dialog, leading to elevation of privilege. |
+| [CVE-2019-1405](https://www.cve.org/CVERecord?id=CVE-2019-1405) | An elevation of privilege vulnerability in Windows UPnP Service due to improper handling of objects in memory. |
+| [CVE-2020-0668](https://www.cve.org/CVERecord?id=CVE-2020-0668) | An elevation of privilege vulnerability due to improper handling of symbolic links in Windows. |
+| [CVE-2020-0683](https://www.cve.org/CVERecord?id=CVE-2020-0683) | Elevation of privilege vulnerability in Windows due to improper handling of file paths. |
+| [CVE-2020-0796](https://www.cve.org/CVERecord?id=CVE-2020-0796) | A remote code execution vulnerability in SMBv3 known as 'SMBGhost'. |
+| [CVE-2020-1013](https://www.cve.org/CVERecord?id=CVE-2020-1013) | A local privilege escalation vulnerability in Windows Update Orchestrator Service. |
+| [CVE-2020-1013](https://www.cve.org/CVERecord?id=CVE-2020-1013) | PrintNightmare, a remote code execution vulnerability in Windows Print Spooler. |
+| [CVE-2021-26855](https://www.cve.org/CVERecord?id=CVE-2021-26855) | ProxyLogon - A server-side request forgery (SSRF) vulnerability in Exchange Server allowing remote code execution. |
+| [CVE-2021-26857](https://www.cve.org/CVERecord?id=CVE-2021-26857) | A vulnerability in Exchange Server that could allow an attacker to perform remote code execution. |
+| [CVE-2021-26858](https://www.cve.org/CVERecord?id=CVE-2021-26858) | A post-authentication arbitrary file write vulnerability in Exchange Server. |
+| [CVE-2021-27065](https://www.cve.org/CVERecord?id=CVE-2021-27065) | A post-authentication arbitrary file write vulnerability in Exchange Server could lead to remote code execution. |
+| [CVE-2021-44228](https://www.cve.org/CVERecord?id=CVE-2021-44228) | Log4Shell, a remote code execution vulnerability in Apache Log4j. |
+| [CVE-2021-36934](https://www.cve.org/CVERecord?id=CVE-2021-36934) | HiveNightmare - A vulnerability that allows for local privilege escalation due to overly permissive Access Control Lists (ACLs) on system files, including the Security Accounts Manager (SAM). |
+| [CVE-2022-34718](https://www.cve.org/CVERecord?id=CVE-2022-34718) | Windows TCP/IP Remote Code Execution Vulnerability. |
+| [CVE-2022-40140](https://www.cve.org/CVERecord?id=CVE-2022-40140) | A vulnerability in Microsoft Exchange Server leading to remote code execution. |
+| [CVE-2022-22965](https://www.cve.org/CVERecord?id=CVE-2022-22965) | Spring4Shell, a remote code execution vulnerability in Spring Framework. |
+| [CVE-2023-36664](https://www.cve.org/CVERecord?id=CVE-2023-36664) | Artifex Ghostscript through 10.01.2 mishandles permission validation for pipe devices (with the %pipe% prefix or the pipe character prefix). |
+| [CVE-2023-23397](https://www.cve.org/CVERecord?id=CVE-2023-23397) | Microsoft Outlook Elevation of Privilege Vulnerability. |

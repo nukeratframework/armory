@@ -1,0 +1,24 @@
+{
+    "name": "Rubeus",
+    "version": "0.0.1",
+    "command": "rubeus",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/Rubeus",
+    "metadata": {
+        "author": [
+            {
+                "name": "GhostPack",
+                "original_repository": "https://github.com/GhostPack/Rubeus"
+            },
+            {
+                "name": "sliver",
+                "original_repository": "https://github.com/sliverarmory/rubeus"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.0"
+    }
+}

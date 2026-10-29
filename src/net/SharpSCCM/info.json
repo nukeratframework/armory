@@ -1,0 +1,24 @@
+{
+    "name": "SharpSCCM",
+    "version": "0.0.1",
+    "command": "sharp-sccm",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpSCCM",
+    "metadata": {
+        "author": [
+            {
+                "name": "sliverarmory",
+                "original_repository": "https://github.com/sliverarmory/SharpSCCM"
+            },
+            {
+                "name": "Mayyhem",
+                "original_repository": "https://github.com/Mayyhem/SharpSCCM"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.7"
+    }
+}

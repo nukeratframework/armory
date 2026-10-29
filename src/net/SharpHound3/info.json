@@ -1,0 +1,20 @@
+{
+    "name": "SharpHound3",
+    "version": "0.0.1",
+    "command": "sharphound3",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpHound3",
+    "metadata": {
+        "author": [
+            {
+                "name": "BloodHoundAD",
+                "original_repository": "https://github.com/BloodHoundAD/SharpHound3"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.5"
+    }
+}

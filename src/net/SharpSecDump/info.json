@@ -1,0 +1,20 @@
+{
+    "name": "SharpSecDump",
+    "version": "0.0.1",
+    "command": "sharp-secdump",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpSecDump",
+    "metadata": {
+        "author": [
+            {
+                "name": "G0ldenGunSec",
+                "original_repository": "https://github.com/G0ldenGunSec/SharpSecDump"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.7"
+    }
+}

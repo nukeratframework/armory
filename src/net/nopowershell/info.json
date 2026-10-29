@@ -1,0 +1,24 @@
+{
+    "name": "NoPowerShell",
+    "version": "0.0.1",
+    "command": "nopowershell",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/NoPowerShell",
+    "metadata": {
+        "author": [
+            {
+                "name": "sliverarmory",
+                "original_repository": "https://github.com/sliverarmory/nopowershell"
+            },
+            {
+                "name": "bitsadmin",
+                "original_repository": "https://github.com/bitsadmin/nopowershell"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.7"
+    }
+}

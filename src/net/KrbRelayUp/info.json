@@ -1,0 +1,18 @@
+{
+    "name": "KrbRelayUp",
+    "version": "0.0.1",
+    "command": "krbrelayup",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/KrbRelayUp",
+    "metadata": {
+        "author": {
+            "name": "Dec0ne",
+            "original_repository": "https://github.com/Dec0ne/KrbRelayUp"
+        },
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.7"
+    }
+}

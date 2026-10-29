@@ -1,0 +1,28 @@
+{
+    "name": "SQLRecon",
+    "version": "0.0.1",
+    "command": "sql-recon",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SQLRecon",
+    "metadata": {
+        "author": [
+            {
+                "name": "sliverarmory",
+                "original_repository": "https://github.com/sliverarmory/SQLRecon"
+            },
+            {
+                "name": "xforcered",
+                "original_repository": "https://github.com/xforcered/SQLRecon"
+            },
+            {
+                "name": "skahwah",
+                "original_repository": "https://github.com/skahwah/SQLRecon"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.7"
+    }
+}

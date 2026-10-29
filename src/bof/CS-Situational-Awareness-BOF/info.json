@@ -1,0 +1,1354 @@
+{
+    "GetNetsession": {
+        "name": "GetNetsession",
+        "version": "0.0.1",
+        "command": "get-netsession",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Ipconfig": {
+        "name": "Ipconfig",
+        "version": "0.0.1",
+        "command": "ipconfig",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Ldapsearch": {
+        "name": "Ldapsearch",
+        "version": "0.0.1",
+        "command": "ldapsearch",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Listdns": {
+        "name": "Listdns",
+        "version": "0.0.1",
+        "command": "listdns",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Listmods": {
+        "name": "Listmods",
+        "version": "0.0.1",
+        "command": "listmods",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netgroup": {
+        "name": "Netgroup",
+        "version": "0.0.1",
+        "command": "netgroup",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netlocalgroup": {
+        "name": "Netlocalgroup",
+        "version": "0.0.1",
+        "command": "netlocalgroup",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netshares": {
+        "name": "Netshares",
+        "version": "0.0.1",
+        "command": "netshares",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netstat": {
+        "name": "Netstat",
+        "version": "0.0.1",
+        "command": "netstat",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netview": {
+        "name": "Netview",
+        "version": "0.0.1",
+        "command": "netview",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Nslookup": {
+        "name": "Nslookup",
+        "version": "0.0.1",
+        "command": "nslookup",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "RegQuery": {
+        "name": "RegQuery",
+        "version": "0.0.1",
+        "command": "reg-query",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Routeprint": {
+        "name": "Routeprint",
+        "version": "0.0.1",
+        "command": "routeprint",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScEnum": {
+        "name": "ScEnum",
+        "version": "0.0.1",
+        "command": "sc-enum",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScQc": {
+        "name": "ScQc",
+        "version": "0.0.1",
+        "command": "sc-qc",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScQdescription": {
+        "name": "ScQdescription",
+        "version": "0.0.1",
+        "command": "sc-qdescription",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScQfailure": {
+        "name": "ScQfailure",
+        "version": "0.0.1",
+        "command": "sc-qfailure",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScQtriggerinfo": {
+        "name": "ScQtriggerinfo",
+        "version": "0.0.1",
+        "command": "sc-qtriggerinfo",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ScQuery": {
+        "name": "ScQuery",
+        "version": "0.0.1",
+        "command": "sc-query",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Schtasksenum": {
+        "name": "Schtasksenum",
+        "version": "0.0.1",
+        "command": "schtasksenum",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Schtasksquery": {
+        "name": "Schtasksquery",
+        "version": "0.0.1",
+        "command": "schtasksquery",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Tasklist": {
+        "name": "Tasklist",
+        "version": "0.0.1",
+        "command": "tasklist",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Uptime": {
+        "name": "Uptime",
+        "version": "0.0.1",
+        "command": "uptime",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Vssenum": {
+        "name": "Vssenum",
+        "version": "0.0.1",
+        "command": "vssenum",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Whoami": {
+        "name": "Whoami",
+        "version": "0.0.1",
+        "command": "whoami",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Windowlist": {
+        "name": "Windowlist",
+        "version": "0.0.1",
+        "command": "windowlist",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "WmiQuery": {
+        "name": "WmiQuery",
+        "version": "0.0.1",
+        "command": "wmi-query",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Env": {
+        "name": "Env",
+        "version": "0.0.1",
+        "command": "env",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "GetNetsession2": {
+        "name": "GetNetsession2",
+        "version": "0.0.1",
+        "command": "get-netsession2",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "ListFirewallRules": {
+        "name": "ListFirewallRules",
+        "version": "0.0.1",
+        "command": "list-firewall-rules",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Locale": {
+        "name": "Locale",
+        "version": "0.0.1",
+        "command": "locale",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netlocalgroup2": {
+        "name": "Netlocalgroup2",
+        "version": "0.0.1",
+        "command": "netlocalgroup2",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netloggedon": {
+        "name": "Netloggedon",
+        "version": "0.0.1",
+        "command": "netloggedon",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netloggedon2": {
+        "name": "Netloggedon2",
+        "version": "0.0.1",
+        "command": "netloggedon2",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Nettime": {
+        "name": "Nettime",
+        "version": "0.0.1",
+        "command": "nettime",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netuptime": {
+        "name": "Netuptime",
+        "version": "0.0.1",
+        "command": "netuptime",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Notepad": {
+        "name": "Notepad",
+        "version": "0.0.1",
+        "command": "notepad",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Probe": {
+        "name": "Probe",
+        "version": "0.0.1",
+        "command": "probe",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Dir": {
+        "name": "Dir",
+        "version": "0.0.1",
+        "command": "dir",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netuse": {
+        "name": "Netuse",
+        "version": "0.0.1",
+        "command": "netuse",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netuser": {
+        "name": "Netuser",
+        "version": "0.0.1",
+        "command": "netuser",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Netuserenum": {
+        "name": "Netuserenum",
+        "version": "0.0.1",
+        "command": "netuserenum",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Regsession": {
+        "name": "Regsession",
+        "version": "0.0.1",
+        "command": "regsession",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Aadjoininfo": {
+        "name": "Aadjoininfo",
+        "version": "0.0.1",
+        "command": "aadjoininfo",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "GetDpapiSystem": {
+        "name": "GetDpapiSystem",
+        "version": "0.0.1",
+        "command": "get-dpapi-system",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "GetSessionInfo": {
+        "name": "GetSessionInfo",
+        "version": "0.0.1",
+        "command": "get-session-info",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Ldapsecuritycheck": {
+        "name": "Ldapsecuritycheck",
+        "version": "0.0.1",
+        "command": "ldapsecuritycheck",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Nonpagedldapsearch": {
+        "name": "Nonpagedldapsearch",
+        "version": "0.0.1",
+        "command": "nonpagedldapsearch",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Useridletime": {
+        "name": "Useridletime",
+        "version": "0.0.1",
+        "command": "useridletime",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Md5": {
+        "name": "Md5",
+        "version": "0.0.1",
+        "command": "md5",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Sha1": {
+        "name": "Sha1",
+        "version": "0.0.1",
+        "command": "sha1",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Sha256": {
+        "name": "Sha256",
+        "version": "0.0.1",
+        "command": "sha256",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/CS-Situational-Awareness-BOF",
+        "metadata": {
+            "author": [
+                {
+                    "name": "trustedsec",
+                    "original_repository": "https://github.com/trustedsec/CS-Situational-Awareness-BOF"
+                },
+                {
+                    "name": "sliver",
+                    "original_repository": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    }
+}

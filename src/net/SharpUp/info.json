@@ -1,0 +1,20 @@
+{
+    "name": "SharpUp",
+    "version": "0.0.1",
+    "command": "sharpup",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpUp",
+    "metadata": {
+        "author": [
+            {
+                "name": "GhostPack",
+                "original_repository": "https://github.com/GhostPack/SharpUp"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "3.5"
+    }
+}

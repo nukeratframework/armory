@@ -1,0 +1,358 @@
+{
+    "Askcreds": {
+        "name": "Askcreds",
+        "command": "askcreds",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Psw": {
+        "name": "Psw",
+        "command": "psw",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Smbinfo": {
+        "name": "Smbinfo",
+        "command": "smbinfo",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Winver": {
+        "name": "Winver",
+        "command": "winver",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "AddMachineAccount": {
+        "name": "AddMachineAccount",
+        "command": "add-machine-account",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Lapsdump": {
+        "name": "Lapsdump",
+        "command": "lapsdump",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "PetitPotam": {
+        "name": "PetitPotam",
+        "command": "petitpotam",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Domaininfo": {
+        "name": "Domaininfo",
+        "command": "domaininfo",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "KerbHash": {
+        "name": "KerbHash",
+        "command": "kerbhash",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Psc": {
+        "name": "Psc",
+        "command": "psc",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Psk": {
+        "name": "Psk",
+        "command": "psk",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Psm": {
+        "name": "Psm",
+        "command": "psm",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "Psx": {
+        "name": "Psx",
+        "command": "psx",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "SprayAD": {
+        "name": "SprayAD",
+        "command": "spray-ad",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "StartWebClient": {
+        "name": "StartWebClient",
+        "command": "startwebclient",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    },
+    "WdToggle": {
+        "name": "WdToggle",
+        "command": "wdtoggle",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64"
+            ]
+        }
+    },
+    "Klist": {
+        "name": "Klist",
+        "command": "klist",
+        "type": "bof",
+        "repository": "https://github.com/nukeratarmory/C2-Tool-Collection",
+        "metadata": {
+            "author": [
+                {
+                    "name": "outflanknl",
+                    "original_repository": "https://github.com/outflanknl/C2-Tool-Collection"
+                }
+            ],
+            "platform": [
+                "windows"
+            ],
+            "architecture": [
+                "x64",
+                "x86"
+            ]
+        }
+    }
+}

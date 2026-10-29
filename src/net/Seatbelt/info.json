@@ -1,0 +1,24 @@
+{
+    "name": "Seatbelt",
+    "version": "0.0.1",
+    "command": "seatbelt",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/Seatbelt",
+    "metadata": {
+        "author": [
+            {
+                "name": "GhostPack",
+                "original_repository": "https://github.com/GhostPack/Seatbelt"
+            },
+            {
+                "name": "sliver",
+                "original_repository": "https://github.com/sliverarmory/Seatbelt"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.0"
+    }
+}

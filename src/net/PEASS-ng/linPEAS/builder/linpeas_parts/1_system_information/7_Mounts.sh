@@ -1,0 +1,47 @@
+# Title: System Information - Mounts
+# ID: SY_Mounts
+# Author: Carlos Polop
+# Last Update: 07-09-2026
+# Description: Check for mount point misconfigurations that could lead to privilege escalation, udisks2 CVE-2026-7867 exposure, and XFSTango CVE-2026-80530 exposure:
+#   - Unmounted filesystems
+#   - Mount point permissions
+#   - Mount options
+#   - Common vulnerable scenarios:
+#     * Writable mount points
+#     * Insecure mount options
+#     * Unmounted sensitive filesystems
+#     * Shared mount points
+#   - Exploitation methods:
+#     * Mount point abuse: Exploit mount misconfigurations
+#     * Common attack vectors:
+#       - Mount point modification
+#       - Filesystem remounting
+#       - Mount option abuse
+#       - Shared mount exploitation
+#     * Exploit techniques:
+#       - Mount point manipulation
+#       - Filesystem remounting
+#       - Mount option exploitation
+#       - Shared mount abuse
+# License: GNU GPL
+# Version: 1.2
+# Mitre: T1068,T1082,T1120
+# Functions Used: checkUDisksCVE20267867, checkXFSTangoCVE202680530, print_2title, print_info
+# Global Variables: $DEBUG, $SEARCH_IN_FOLDER, $mountG, $mountpermsB, $mountpermsG, $notmounted, $Wfolders, $mounted
+# Initial Functions:
+# Generated Global Variables:
+# Fat linpeas: 0
+# Small linpeas: 1
+
+
+if ! [ "$SEARCH_IN_FOLDER" ]; then
+    checkUDisksCVE20267867
+    checkXFSTangoCVE202680530
+fi
+
+if [ -f "/etc/fstab" ] || [ "$DEBUG" ]; then
+    print_2title "Unmounted file-system?" "T1082,T1120"
+    print_info "Check if you can mount umounted devices"
+    grep -v "^#" /etc/fstab 2>/dev/null | grep -Ev "\W+\#|^#" | sed -${E} "s,$mountG,${SED_GREEN},g" | sed -${E} "s,$notmounted,${SED_RED},g" | sed -${E} "s%$mounted%${SED_BLUE}%g" | sed -${E} "s,$Wfolders,${SED_RED}," | sed -${E} "s,$mountpermsB,${SED_RED},g" | sed -${E} "s,$mountpermsG,${SED_GREEN},g"
+    echo ""
+fi

@@ -1,0 +1,24 @@
+{
+    "name": "MLOKit",
+    "version": "0.0.1",
+    "command": "mlokit",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/MLOKit",
+    "metadata": {
+        "author": [
+            {
+                "name": "xforcered",
+                "original_repository": "https://github.com/xforcered/MLOKit"
+            },
+            {
+                "name": "h4wkst3r",
+                "original_repository": "https://github.com/h4wkst3r/MLOKit"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.8"
+    }
+}

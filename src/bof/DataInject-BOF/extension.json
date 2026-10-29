@@ -1,0 +1,32 @@
+{
+    "name": "datainject",
+    "version": "0.0.1",
+    "command_name": "datainject",
+    "extension_author": "@0xLegacyy",
+    "original_author": "@0xLegacyy",
+    "repo_url": "https://github.com/iiLegacyyii/DataInject-BOF",
+    "help": "Inject shellcode into a target process and hijack execution via overwriting combase.dll!__guard_check_icall_fptr",
+    "depends_on": "coff-loader",
+    "entrypoint": "go",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "dist/datainject.x64.o"
+        }
+    ],
+    "arguments": [
+        {
+            "name": "pid",
+            "desc": "The PID of the process you want to inject into.",
+            "type": "int",
+            "optional": false
+        },
+        {
+            "name": "shellcode-path",
+            "desc": "Path to file containing shellcode.",
+            "type": "file",
+            "optional": false
+        }
+    ]
+}

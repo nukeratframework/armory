@@ -1,0 +1,20 @@
+{
+    "name": "SharpLAPS",
+    "version": "0.0.1",
+    "command": "sharp-laps",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpLAPS",
+    "metadata": {
+        "author": [
+            {
+                "name": "swisskyrepo",
+                "original_repository": "https://github.com/swisskyrepo/SharpLAPS"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.7"
+    }
+}

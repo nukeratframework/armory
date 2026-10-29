@@ -1,0 +1,20 @@
+{
+    "name": "SharpSH",
+    "version": "0.0.1",
+    "command": "sharp-sh",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/sharpsh",
+    "metadata": {
+        "author": [
+            {
+                "name": "thelikes",
+                "original_repository": "https://github.com/thelikes/sharpsh"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.5"
+    }
+}

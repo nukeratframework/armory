@@ -1,0 +1,18 @@
+{
+    "name": "SharpView",
+    "version": "0.0.1",
+    "command": "sharpview",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpView",
+    "metadata": {
+        "author": {
+            "name": "tevora-threat",
+            "original_repository": "https://github.com/tevora-threat/SharpView"
+        },
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.5"
+    }
+}

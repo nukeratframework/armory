@@ -1,0 +1,20 @@
+{
+    "name": "SharpRDP",
+    "version": "0.0.1",
+    "command": "sharp-rdp",
+    "type": ".net",
+    "repository": "https://github.com/nukeratarmory/SharpRDP",
+    "metadata": {
+        "author": [
+            {
+                "name": "0xthirteen",
+                "original_repository": "https://github.com/0xthirteen/SharpRDP"
+            }
+        ],
+        "platform": [
+            "windows"
+        ],
+        "architecture": "any",
+        "net_version": "4.5"
+    }
+}

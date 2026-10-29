@@ -1,0 +1,16 @@
+# Compiled BOF object files
+_bin/
+
+wip/
+
+# IDE and editor folders
+.vscode/
+.idea/
+
+# Build artifacts
+*.o
+*.obj
+
+# OS generated files
+.DS_Store
+Thumbs.db
