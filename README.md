@@ -4,13 +4,13 @@ NukeRat armory tools source code (.NET and BOFs).
 
 ## Usage
 
-NukeRat does not ship with these tools preinstalled. Install what you need from this repository:
+NukeRat does not ship with these tools preinstalled. You need to install them manually: open the client terminal tab and run:
 
 ```
 armory install <tool>
 ```
 
-To install the full set at once:
+To install all tools, run:
 
 ```
 armory install all
