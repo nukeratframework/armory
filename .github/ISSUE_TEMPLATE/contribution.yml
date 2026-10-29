@@ -1,0 +1,59 @@
+name: Armory contribution
+description: New or updated tool under src/bof or src/net
+title: "[Armory]: "
+labels:
+  - contribution
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tool source in `src/bof/` or `src/net/`. Open a PR when you can.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - BOF
+        - .NET
+    validations:
+      required: true
+
+  - type: dropdown
+    id: change
+    attributes:
+      label: Change
+      options:
+        - Add tool
+        - Update tool
+        - README index only
+    validations:
+      required: true
+
+  - type: input
+    id: tool-repository-link
+    attributes:
+      label: Tool repository link
+      description: Link to the tool's repository (not this armory repo).
+      placeholder: https://github.com/org/repo
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: No compiled artifacts in the tree
+          required: true
+        - label: README index updated
+          required: true
+        - label: Tool license allows redistribution
+          required: true
